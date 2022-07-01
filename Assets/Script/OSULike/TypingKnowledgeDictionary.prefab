@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6289877970150455771
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6289877970150455773}
+  - component: {fileID: 6289877970150455770}
+  m_Layer: 0
+  m_Name: TypingKnowledgeDictionary
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6289877970150455773
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6289877970150455771}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 90}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6289877970150455770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6289877970150455771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ebcbdfb69570964c9ed41a38bc9710f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knowlegde:
+  - 'There are many ways to type with a keyborad: touch typing, hunt and peck,buffering
+    and the combination of any of them!'
+  - Touch typing is not the only way to type !
+  - 'Two common types of physical keyboard: membrane keyboard and mechanical keyboard
+    !'
+  - Did you know that the "Home Row" is not made up of home ?
+  - Did you notice two bumps on your F and J keys?
+  - You should put your index finger on F and J !
+  - If you think your typing is too slow, try Touch Typing !
+  - Your posture can affect your typing performance too !
+  - If you just got a new keyboard, it's normal if you need more time to type faster
+    with it !
+  - 'Did you know that Chinese people have many keys on their keyoard ? (No, their
+    keyboard is actually the same like us.) '
+  - Did you know that QWERTY is not the only keyboard layout ?
+  - Guess which game is this game developer's favourite game ? Resident Evil or Control?
+  - 'Don''t panik ! Chill when you practice . '
+  - Typing performance is measured by WPM (Word Per Minute) .
+  - The average speed of typing is 38-40 WPM.
+  - If you have typing speed of 60-70 WPM, you are considered as a fast typer !
+  - It takes 2 hours and 40 minutes of practice to increase typing speed by 1 WPM.
+  knowledgeText: {fileID: 0}
