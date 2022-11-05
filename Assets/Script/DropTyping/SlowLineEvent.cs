@@ -27,8 +27,6 @@ public class SlowLineEvent : MonoBehaviour
         timer = initTime;
         loseScreen.SetActive(false);
         SpeedUp();
-        
-        //audioMixer = audioSource.outputAudioMixerGroup;
     }
 
     // Update is called once per frame
@@ -36,7 +34,6 @@ public class SlowLineEvent : MonoBehaviour
     {
         if (WordToDisplay.isSlow)
         {
-            //Debug.Log("is slow");
             isSlow = true;
             SlowDown();
         }

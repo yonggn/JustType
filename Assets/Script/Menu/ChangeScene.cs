@@ -10,6 +10,18 @@ public class ChangeScene : MonoBehaviour
         SceneManager.LoadScene(sceneName);
     }
 
+    public void FirstPlay(string sceneToKnowWPM)
+    {
+        if(PlayerPrefs.GetInt("LevelCompleted")<=0)
+        {
+            SceneManager.LoadScene(sceneToKnowWPM);
+        }
+        else
+        {
+            SceneManager.LoadScene("Menu");
+        }
+    }
+
     public void OpenPanel(GameObject panel)
     {
         panel.SetActive(true);

@@ -5,7 +5,6 @@ using TMPro;
 
 public class GenerateLetter : MonoBehaviour
 {
-    //,';',',','.','1','2','3','4','5','6','7','8','9','0','-','=','[',']','/'
     public GameObject letterPrefab;
     private GameObject letterObject;
     public Transform canvas;
@@ -44,29 +43,24 @@ public class GenerateLetter : MonoBehaviour
                         correctSound.Play();
                         particleObject.transform.position = pos;
                         particleObject.Play();
-                        //letterShown.ToString(null);
                         letterObject.gameObject.SetActive(false);
 
                         //Determine grade using time to react
                         if (letterOnBeat.spawnTimer >= 0 && letterOnBeat.spawnTimer <= (letterOnBeat.timeToGenerateNote + letterOnBeat.alignTime) / 2) //and hit on time
                         {                            
-                            //letterShown="";
                             grade.perfect = true;
                             score.score += 2;
                             canPress = false;
                         }
                         if (letterOnBeat.spawnTimer >= (letterOnBeat.timeToGenerateNote + letterOnBeat.alignTime) / 2 && letterOnBeat.spawnTimer <= (letterOnBeat.timeToGenerateNote + letterOnBeat.alignTime)) //and hit
                         {
-                            //letterShown = "";
                             grade.good = true;
                             score.score++;
                             canPress = false;
                         }
-                        //RandomizeLetter();
                     }
                     else if (Input.inputString != letterShown.ToString()) //if player press wrong 
                     {
-                        //letterShown = "";
                         letterObject.gameObject.SetActive(false);
                         grade.miss = true;
                         score.score--;
@@ -79,7 +73,6 @@ public class GenerateLetter : MonoBehaviour
             }
             if (letterOnBeat.spawnTimer >= (letterOnBeat.timeToGenerateNote + letterOnBeat.alignTime) - 0.01 && canPress)
             {
-                //letterShown = "";
                 letterObject.gameObject.SetActive(false);
                 grade.miss = true;
                 canPress = false;

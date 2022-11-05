@@ -11,14 +11,6 @@ public class WordToDisplay : MonoBehaviour
     public GameObject slowLine;
     public bool exceedLine;
     public static bool isSlow;
-    //public static bool wordComplete = false;
-
-    private void Start()
-    {
-        //wordComplete = false;
-        //float randFallSpeed = Random.Range(0.5f, 1f);
-        //fallSpeed = randFallSpeed;
-    }
 
     public void SetWord(string word)
     {
@@ -34,7 +26,6 @@ public class WordToDisplay : MonoBehaviour
 
     public void RemoveWord()  //remove the whole word
     {
-        //wordComplete = true;
         isSlow = false;
         Destroy(gameObject);
     }
@@ -48,20 +39,9 @@ public class WordToDisplay : MonoBehaviour
     {
         //the z value in translate is set to 1 because text mesh pro is a 3d object and need z value for the depth
         transform.Translate(0f, -fallSpeed * Time.deltaTime,0.1f);
-        /*if(gameObject.transform.position.y<=destroyLine.transform.position.y)
-        {
-            //wordDisplay.text = "";
-            isSlow = false;
-            exceedLine = true;
-            RemoveWord();
-        }*/
         if(gameObject.transform.position.y<=slowLine.transform.position.y&&gameObject.transform.position.y>=destroyLine.transform.position.y)
         {
             isSlow = true;
-            exceedLine = false;
         }
-
     }
-
-
 }

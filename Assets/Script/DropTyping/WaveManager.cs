@@ -13,7 +13,6 @@ public class WaveManager : WordGenerator
         public float durationOfWave;
     }
 
-
     public Wave wave;
     public float timer=0f;
     public WordManager wordManager;
@@ -58,26 +57,14 @@ public class WaveManager : WordGenerator
                     {
                         newWaveInText.text = "New wave in : " + (Mathf.RoundToInt(wave.durationOfWave - timer)).ToString();
                     }
-
                     //if timer ends and !failed, send signal for next wave
                     if (timer >= wave.durationOfWave)
                     {
                         timer = 0;
-                        // if (wordManager.hasActiveWord) //when timer stop, but still have active word on screen, let player finish type until no active word is available
-                        // {
-                        //     waveStop = false;   
-                        // }
-                        //waveStop, and computer will stop generate random word index and stop adding word
-                        // if(!wordManager.hasActiveWord)
-                        // {
                         waveStop = true;
                         wave.levelNow = 2; //then th egame will start second round
                         newWaveInText.text = "";
-                        // }
-                        //if timer ends and failed, player lose
                     }
-
-                    //when signal for next wave, level now++ and new file name, duration
                 }
             }
 
@@ -102,21 +89,10 @@ public class WaveManager : WordGenerator
                     if (timer >= wave.durationOfWave)
                     {
                         timer = 0;
-                        // if (wordManager.hasActiveWord) //when timer stop, but still have active word on screen, let player finish type until no active word is available
-                        // {
-                        //     waveStop = false; 
-                        // }
-                        // //waveStop, and computer will stop generate random word index and stop adding word
-                        // if (!wordManager.hasActiveWord)
-                        // {
                         waveStop = true;
                         wave.levelNow = 3; //then the game will start second round
                         newWaveInText.text = "";
-                        // }
-                        //if timer ends and failed, player lose
                     }
-
-                    //when signal for next wave, level now++ and new file name, duration
                 }
             }
 
@@ -141,21 +117,10 @@ public class WaveManager : WordGenerator
                     if (timer >= wave.durationOfWave)
                     {
                         timer = 0;
-                        //  if (wordManager.hasActiveWord) //when timer stop, but still have active word on screen, let player finish type until no active word is available
-                        //  {
-                        //      waveStop = false;
-                        //  }
-                        //  //waveStop, and computer will stop generate random word index and stop adding word
-                        //  if (!wordManager.hasActiveWord)
-                        //  {
                         waveStop = true;
                         wave.levelNow = 4; //then the game will start second round
                         newWaveInText.text = "";
-                        //  }
-                        //if timer ends and failed, player lose
                     }
-
-                    //when signal for next wave, level now++ and new file name, duration
                 }
             }
             if (wave.levelNow == 4)
@@ -179,21 +144,10 @@ public class WaveManager : WordGenerator
                     if (timer >= wave.durationOfWave)
                     {
                         timer = 0;
-                        // if (wordManager.hasActiveWord) //when timer stop, but still have active word on screen, let player finish type until no active word is available
-                        // {
-                        //     waveStop = false;
-                        // }
-                        // //waveStop, and computer will stop generate random word index and stop adding word
-                        // if (!wordManager.hasActiveWord)
-                        // {
                         waveStop = true;
                         wave.levelNow = 5; //then th egame will start second round
                         newWaveInText.text = "";
-                        //  }
-                        //if timer ends and failed, player lose
                     }
-
-                    //when signal for next wave, level now++ and new file name, duration
                 }
             }
             if (wave.levelNow == 5)
@@ -217,21 +171,10 @@ public class WaveManager : WordGenerator
                     if (timer >= wave.durationOfWave)
                     {
                         timer = 0;
-                        // if (wordManager.hasActiveWord) //when timer stop, but still have active word on screen, let player finish type until no active word is available
-                        // {
-                        //     waveStop = false;
-                        // }
-                        // //waveStop, and computer will stop generate random word index and stop adding word
-                        // if (!wordManager.hasActiveWord)
-                        // {
                         waveStop = true;
-                        wave.levelNow = 6; //then th egame will start second round
+                        wave.levelNow = 6; //then the game will start second round
                         newWaveInText.text = "";
-                        //  }
-                        //if timer ends and failed, player lose
                     }
-
-                    //when signal for next wave, level now++ and new file name, duration
                 }
             }
             if (wave.levelNow == 6)
@@ -255,21 +198,10 @@ public class WaveManager : WordGenerator
                     if (timer >= wave.durationOfWave)
                     {
                         timer = 0;
-                        // if (wordManager.hasActiveWord) //when timer stop, but still have active word on screen, let player finish type until no active word is available
-                        // {
-                        //     waveStop = false;
-                        // }
-                        // //waveStop, and computer will stop generate random word index and stop adding word
-                        // if (!wordManager.hasActiveWord)
-                        // {
                         waveStop = true;
                         wave.levelNow = 7; //then th egame will start second round
                         newWaveInText.text = "";
-                        //  }
-                        //if timer ends and failed, player lose
                     }
-
-                    //when signal for next wave, level now++ and new file name, duration
                 }
             }
             if (wave.levelNow == 7)
@@ -293,26 +225,14 @@ public class WaveManager : WordGenerator
                     if (timer >= wave.durationOfWave)
                     {
                         timer = 0;
-                        // if (wordManager.hasActiveWord) //when timer stop, but still have active word on screen, let player finish type until no active word is available
-                        // {
-                        //     waveStop = false;
-                        // }
-                        // //waveStop, and computer will stop generate random word index and stop adding word
-                        // if (!wordManager.hasActiveWord)
-                        // {
                         waveStop = true;
                         wave.levelNow = 8; //then the game will start second round
                         newWaveInText.text = "";
-                        // }
-                        //if timer ends and failed, player lose
                     }
-
-                    //when signal for next wave, level now++ and new file name, duration
                 }
             }
             if (wave.levelNow == 8)
             {
-                //wave.durationOfWave = 60f * 5.5f;
                 wave.fileName = "words.txt";
                 myFilePath = Application.dataPath + "/StreamingAssets/WordFile/" + wave.fileName;
                 ReadFromFile(myFilePath);
@@ -322,30 +242,8 @@ public class WaveManager : WordGenerator
                 {
                     timer += Time.deltaTime;
                     newWaveInText.text = "";
-                    //if timer ends and !failed, send signal for next wave
-                    // if (timer >= wave.durationOfWave)
-                    //{
-                    //  timer = 0;
-                    //  if (wordManager.hasActiveWord) //when timer stop, but still have active word on screen, let player finish type until no active word is available
-                    //  {
-                    //      waveStop = false;
-                    //  }
-                    //waveStop, and computer will stop generate random word index and stop adding word
-                    /*if (!wordManager.hasActiveWord)
-                    {
-                        waveStop = true;
-                        wave.levelNow = 3; //then th egame will start second round
-                        newWaveInText.text = "";
-                    }*/
-                    //if timer ends and failed, player lose
-                    //}
-
-                    //when signal for next wave, level now++ and new file name, duration
                 }
             }
-
         }
-
-        
     }
 }

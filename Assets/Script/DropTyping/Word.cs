@@ -11,7 +11,6 @@ public class Word
     public static bool exceed;
 
     WordToDisplay wordDisplay;
-    //WPMCalculator wpmCalculator;
 
     //This function will accept parameters from WordManager to add word in list
     public Word(string _word, WordToDisplay word_display)
@@ -21,7 +20,6 @@ public class Word
         typeIndex = 0;
         wordDisplay = word_display;
         wordDisplay.SetWord(word);
-        //letterCount = word.Length;
     }
 
     public char GetNextLetter()
@@ -31,10 +29,7 @@ public class Word
 
     public void TypeLetter()
     {
-        //increase type index
         typeIndex++;
-        //startTimer = true;
-        //remove from screen (or other effect?)
         wordDisplay.RemoveLetter();
     }
 
@@ -45,14 +40,10 @@ public class Word
         if (typeIndex >= word.Length)
         {
             wordTyped = true;
-            //WPMCalculator.CalculateWPM();
             wordDisplay.RemoveWord();
-            //WPMCalculator.timer = 0;
-            Debug.Log(word + " is complete");
         }
         if(ExceedLine())
         {
-            //GetNextLetter();
             wordTyped = true;
             wordDisplay.RemoveWord();
         }
@@ -76,5 +67,4 @@ public class Word
         word = "";
         wordDisplay.wordDisplay.text = "";
     }
-    
 }

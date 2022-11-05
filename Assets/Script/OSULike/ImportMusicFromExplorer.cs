@@ -18,8 +18,6 @@ public class ImportMusicFromExplorer : MonoBehaviour
     private void Start()
     {
         okButton.SetActive(false);
-        // auclip = source.clip;
-        //AnalyseMusic(auclip);
     }
 
     public void OpenFileExplorer()
@@ -34,8 +32,6 @@ public class ImportMusicFromExplorer : MonoBehaviour
                 StartCoroutine(GetMusic(path));
             }
             );
-        // path = EditorUtility.OpenFilePanel("Import music", "", "mp3,ogg");
-        //StartCoroutine(GetMusic());
     }
 
 
@@ -53,8 +49,6 @@ public class ImportMusicFromExplorer : MonoBehaviour
             {
                 AudioClip clipSelected = DownloadHandlerAudioClip.GetContent(www);
                 musicManager.AnalyseMusic(clipSelected);
-                //levelSelection.audioSource.clip = clipSelected;
-                //levelSelection.level[9].audioClip = clipSelected;
                 source.clip = clipSelected;
                 source.Play();          
             }
@@ -68,20 +62,4 @@ public class ImportMusicFromExplorer : MonoBehaviour
         gameStart = true;
         source.Play();
     }
-
-    /*public void AnalyseMusic(AudioClip myMusic)
-    {
-        bpm = UniBpmAnalyzer.AnalyzeBpm(myMusic);
-        if (bpm >= 120)
-        {
-            bpm /= 3;
-        }
-        if (bpm <= 10)
-        {
-            bpm *= 3;
-        }
-        //timeToGenerateNote = 60 / bpm;
-        source.Play();
-        //Invoke("InsertNote", timeToGenerateNote);
-    }*/
 }

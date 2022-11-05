@@ -13,7 +13,6 @@ public class WordSpawner : MonoBehaviour
             //Instantiate prefab
             GameObject wordObject = Instantiate(wordPrefab, randomPosition, Quaternion.identity, wordCanvas);
             WordToDisplay wordDisplay = wordObject.GetComponent<WordToDisplay>();
-            //startTimer = true;
             return wordDisplay;
     }
 }

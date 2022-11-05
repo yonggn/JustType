@@ -44,4 +44,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DropTyping.unity
     guid: 8cd60b1c03f0c554c8ff7a133643d169
+  - enabled: 1
+    path: Assets/Scenes/TypingEvaluation.unity
+    guid: 1bf608af791a3434f8e12037c42a4602
   m_configObjects: {}

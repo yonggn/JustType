@@ -21,6 +21,7 @@ public class LetterOnBeat : MonoBehaviour
     {
         gameEnd = false;
         generateLetter.RandomizeLetter();
+        PauseMenu.isPaused = false;
     }
     public void GetBPM(float _Bpm)
     {
@@ -52,13 +53,7 @@ public class LetterOnBeat : MonoBehaviour
     {
         if (!PauseMenu.isPaused && musicManager.source.isPlaying)
         {
-            //generateLetter.RandomPosition();
             generateLetter.RandomizeLetter();
         }
-    }
-
-    public void TimerIndicator()
-    {
-
     }
 }

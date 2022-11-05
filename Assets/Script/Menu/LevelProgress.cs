@@ -34,58 +34,59 @@ public class LevelProgress : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log(scrollRect._currentPage);
-        for (int i = 0; i < level.Count; i++)
+        if (PlayerPrefs.GetInt("LevelCompleted") <= 0)
         {
-
-            // Eg now level 1 completed
-            // playerprefs will have LevelCompleted 1
-            // if level1 completed, means level1+2 in playable now
-            // if playerprefs set int level completed,
-            // then level i+1 playable
-            if(PlayerPrefs.GetInt("LevelCompleted")==i+1)  //(index =0) levelcompleted = 0+1=1; if levelcompleted = 0+1 =1
+            int i;
+            if (PlayerPrefs.GetInt("WPM") >= 90)
             {
-                level[PlayerPrefs.GetInt("LevelCompleted")].playable = true; //level[1] is playable (level 2)
-                for(int j=0;j< PlayerPrefs.GetInt("LevelCompleted"); j++)
+                i = 9;
+            }
+            else
+            {
+                for (i = 0; i <= Mathf.RoundToInt(PlayerPrefs.GetInt("WPM") / 10); i++)
                 {
-                    level[j].playable = true; //level[1] is playable (level 2)
+                    level[i].playable = true;
+                    PlayerPrefs.SetInt("LevelCompleted", Mathf.RoundToInt(PlayerPrefs.GetInt("WPM") / 10));
                 }
             }
+            Debug.Log(PlayerPrefs.GetInt("LevelCompleted"));
+            Debug.Log(PlayerPrefs.GetInt("WPM"));
+        }
 
-            //buttons for unlocking level
-            if (!level[i].playable)
+        else
+        {
+            for (int i = 0; i < level.Count; i++)
             {
-                level[i].playButton.SetActive(false);
+
+                // Eg now level 1 completed
+                // playerprefs will have LevelCompleted 1
+                // if level1 completed, means level1+2 in playable now
+                // if playerprefs set int level completed,
+                // then level i+1 playable
+                if (PlayerPrefs.GetInt("LevelCompleted") == i + 1)  //(index =0) levelcompleted = 0+1=1; if levelcompleted = 0+1 =1
+                {
+                    level[PlayerPrefs.GetInt("LevelCompleted")].playable = true; //level[1] is playable (level 2)
+                    for (int j = 0; j < PlayerPrefs.GetInt("LevelCompleted"); j++)
+                    {
+                        level[j].playable = true; //level[1] is playable (level 2)
+                    }
+                }
+
+                //buttons for unlocking level
+                if (!level[i].playable)
+                {
+                    level[i].playButton.SetActive(false);
+                }
+                else level[i].playButton.SetActive(true);
             }
-            else level[i].playButton.SetActive(true);
+
+            if (level[4].playable)
+            {
+                level[9].playable = true;
+            }
+
         }
-
-        if (level[4].playable)
-        {
-            level[9].playable = true;
-        }
-
-        //MusicOfLevel();
-
-        /*int currPage;
-        int nextPage;
-        currPage = scrollRect._currentPage;
-        nextPage = currPage + 1;
-        if (scrollRect._currentPage == nextPage)
-        {
-            MusicOfLevel();
-            nextPage = currPage + 1;
-        }
-
-        Debug.Log(nextPage);*/
     }
-
-    /*public void MusicOfLevel()
-    { 
-        audioSource.clip = level[scrollRect._currentPage].audioClip;
-        UniBpmAnalyzer.AnalyzeBpm(audioSource.clip);
-        audioSource.Play();
-    }*/
 
     public void ToCustomizableLevel(string cLevel)
     {

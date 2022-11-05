@@ -11,15 +11,6 @@ public class WordGenerator : MonoBehaviour
     public string myFilePath;
     public string fileName; //= "words.txt";
     public static bool waveStop = false;
-    //public ReadGoogleSheet getWord;
-    //private string[] theWord;
-
-    void Start()
-    { 
-        /*myFilePath = Application.dataPath + "/" + fileName;
-        Debug.Log(Application.dataPath);
-        ReadFromFile(myFilePath);*/
-    }
 
     public void ReadFromFile(string filePath)
     {

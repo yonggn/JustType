@@ -29,11 +29,11 @@ public class MusicManager : MonoBehaviour
             bpm *= 4;
         }*/
         letterOnBeat.GetBPM(bpm);
-
+        source.Play();
         pauseMenu.Resume();
 
         //source.Play();
-        source.Play();
+        
 
         //Invoke("InsertNote", timeToGenerateNote);
     }
